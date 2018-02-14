@@ -1,0 +1,270 @@
+/* NOTE:
+ * Grid layout stuff starts at line 138.
+ * The stuff before is just boring old CSS to make content look not crappy.
+ */
+
+/*--------------------------------------------------------------
+CSS Reset
+--------------------------------------------------------------*/
+/*html {*/
+    /*font-family: sans-serif;*/
+    /*-webkit-text-size-adjust: 100%;*/
+    /*-ms-text-size-adjust:     100%;*/
+/*}*/
+
+/*body {*/
+    /*margin: 0;*/
+/*}*/
+
+/*img {*/
+    /*display: block;*/
+    /*border: 0;*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
+
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar */
+}
+
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+    color: #404040;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/*h1,*/
+/*h2,*/
+/*h3 {*/
+    /*margin: 0;*/
+    /*padding: 1em 0;*/
+/*}*/
+
+/*p {*/
+    /*margin: 0;*/
+    /*padding: 1em 0;*/
+/*}*/
+/*div.wrapper {*/
+  /*margin: 20px auto;*/
+  /*width: 350px;*/
+/*}*/
+
+p {
+  font-family: georgia;
+  font-size: 1rem;
+  line-height: 25px;
+  /*margin: 24px 0;*/
+  text-align: center;
+}
+
+nav.vertical {
+  border-radius: 4px;
+  /*box-shadow: 0 0 10px rgba(0,0,0,.15);*/
+  overflow: hidden;
+  text-align: center;
+  width: 90%;
+}
+
+  nav.vertical > ul {
+    list-style-type: none;
+  }
+
+    nav.vertical > ul > li {
+      display: block;
+    }
+
+      nav.vertical > ul > li > a {
+        /*background-color: rgb(157, 34, 60);*/
+        /*background-image: -webkit-linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));*/
+        /*background-image: -moz-linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));*/
+        /*background-image: -o-linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));*/
+        /*background-image: linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));*/
+        background-color: #8e908c;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.1);
+        color: rgb(255,255,255);
+        display: block;
+        font-size: .85rem;
+        font-weight: 500;
+        height: 50px;
+        letter-spacing: .5rem;
+        line-height: 50px;
+        text-shadow: 0 1px 1px rgba(0,0,0,.1);
+        text-transform: uppercase;
+        transition: all .1s ease;
+        text-decoration: none;
+      }
+
+        nav.vertical > ul > li > a:hover {
+         background-color: rgb(114, 51, 98);
+         background-image: -webkit-linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
+         background-image: -moz-linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
+         background-image: -o-linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
+         background-image: linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
+         cursor: pointer;
+        }
+
+          nav.vertical > ul > li > div {
+            background-color: rgb(255,255,255);
+          }
+
+          nav.vertical > ul > li > div > ul {
+            list-style-type: none;
+          }
+
+            nav.vertical > ul > li > div > ul > li > a {
+             border-bottom: 1px solid rgba(0,0,0,.05);
+             color: #333331;
+             display: block;
+             font-size: 1.1rem;
+             padding: 10px 0 10px 0;
+             text-decoration: none;
+             transition: all 0.15s linear;
+            }
+
+              nav.vertical > ul > li > div > ul > li:hover > a {
+                background-color: lightBlue;
+                color: rgb(255,255,255);
+                padding: 10px 0 10px 50px;
+              }
+/*--------------------------------------------------------------
+General styles
+--------------------------------------------------------------*/
+.site {
+    background: #ededed;
+    min-height: 100vh;
+}
+
+.masthead,
+.main-content,
+.sidebar,
+.twin,
+.footer {
+    padding: 1em 2em;
+}
+
+.main-content {
+    background: white;
+}
+.masthead {
+    background: #2185C5;
+    color: white;
+}
+
+.sidebar {
+    background: #FF7F66;
+}
+
+.twin {
+    background: #2185C5;
+}
+
+.twin:last-of-type {
+    background: #7ECEFD;
+}
+
+.colophon {
+    padding: 2em;
+    background: #3E454C;
+    color: white;
+}
+
+.colophon a {
+    color: white;
+}
+
+.colophon a:hover,
+.colophon a:focus {
+    border-bottom: 1px solid white;
+}
+
+/*--------------------------------------------------------------
+If no grid support, limit width to 50em and center align
+--------------------------------------------------------------*/
+@supports not (display: grid) {
+    .site {
+        max-width: 50em;
+        margin: 0 auto;
+    }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 600px) {
+    @supports (display: grid) {
+
+        .site {
+            display: grid;
+            grid-template-columns: 1fr repeat(6, minmax(auto, 10em)) 1fr;
+            grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
+        }
+
+        .masthead,
+        .colophon {
+            grid-column: span 10;
+        }
+
+        .navigation {
+           grid-column: 1/3;
+        }
+
+        .main-content {
+            grid-column: 3/7;
+        }
+
+        .sidebar {
+            grid-column: 7/9;
+        }
+
+        .twin {
+            grid-column: 1/5;
+            grid-row: 3/4;
+        }
+
+        .twin:last-of-type {
+            grid-column: 5/9;
+        }
+
+    }
+}
